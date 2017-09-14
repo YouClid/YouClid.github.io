@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "Backend - Week 1"
+date:   2017-09-13 23:16:00-0400
+categories: jekyll update
+---
+#### Drew Monroe, Soumya Kundu, and Sailesh Simhadri
+
+### Introduction
+And so begins the (dreaded? highly anticipated?) process that is Senior Design: a year long project to build something from start to finish.
+Our illustrious team has been tasked with designing a markup language that can be used to create a visual representation of Euclid's Elements.
+The goal would be to define a language that can be parsed and generate interactive figures as a way of better understanding some of the proofs and discussions present in the Elements.
+This site will serve as a way to document our thought process, design decisions, and whatever other topics we decide to ramble about.
+
+### Updates Since Last Week
+One of the most important updates is that we have a team!
+It seems that we're all excited to be working together on this project (we'll see if that holds by the end of the year...).
+We've broken up into two sub-teams, a frontend team tasked with actually creating the visualizations, and a backend team tasked with designing the markup language and the parser to parse said language.
+The two (three?) of us represent the backend team, with Sailesh serving as an intermediate between the scary world of frontend development (that is to say, he's getting his hands dirty in both parts of the project).
+
+We have created two repositories for our code.
+The first is a repository for our [newly created website](https://youclid.github.io/).
+Powered by jekyll and github pages, this site will be the location where we will document our development process.
+One of the requirements for our senior design project is a fair amount of writing, so this site will also help us with that requirement.
+The second repository will house the actual code that we write for the project.
+Both repositories can be found from [our github page](https://github.com/YouClid).
+
+### Thoughts
+In order for our project to be successful, we need to define some type of markup language that can be used to describe geometric elements.
+One of the simplest solutions (and perhaps one of the more readable ones) would be to create a language similar in style to `LaTeX`.
+This style would allow for a more or less human readable format (by using syntax like `\point{A}` to define a point `A`) and would be easily extendable to add other elements as needed.
+Having a character (like the `\`) to signify the start of an element of our language would certainly appear to be useful for purposes of finding marked up sections of a text.
+One of the things to consider though is the need to ensure that it only minimally impacts the text itself.
+For example, using the `\` character would mean that any appearance of such a character in the text would require escaping in order to treat the character as intended.
+While this may not be a huge problem, it is something to consider as we do not want our markup language to require mass rewriting of a given text to be useful (although, we will probably use something like the `\` given that it probably won't appear often).
+
+Another thing that we will need is some sort of intermediate representation to facilitate the output of our parser.
+This will (hopefully) make it easier for the frontend team to build their visualizations from.
+We have decided to let the frontend team define what they will need from the intermediate representation (the bare minimum that they will need to work with).
+We're not quite sure yet how we will store the intermediate representation, although it will probably be some sort of binary data, perhaps a Google Protocol Buffer?
+Defining the way this will be stored is somewhat hard to do at this point since we have not yet fleshed out the way in which the user will interact with our program (full-stack web application? local script?).
+However, solving that problem isn't a priority yet.
+
+While we're not yet sure what language we'll ultimately end up writing our markup language parser in, we will probably start with something in python.
+Being an easy language to work with, hopefully this will allow us to spin something up quickly for purposes of getting parts of the project to work together.
+One of the obvious concerns with python is the speed, however, or the size of the text we will be parsing at first, the speed shouldn't be a problem.
+
+### Plans for the next week
+We have two main goals for next week:
+
+1. Examine Euclid's Elements to determine geometric elements that our markdown needs to support
+2. Begin to define the structure of the markup language
+
+We imagine that 2. will be a bigger priority than 1., since the spec of the language will change as we (hopefully) will decide we want to support texts other than Euclid's Elements.
+As such, we'll need to expand the scope of our markdown language to include things that may not be covered in the Elements.
+Starting to flesh out a design for our language and maybe even starting to implement a parser will probably be more fun anyways.
