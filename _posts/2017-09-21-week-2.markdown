@@ -24,7 +24,7 @@ With the base syntax established, we quickly realized the difficulty of establis
 
 >Describe the circle BCD with center A.
 
-In this case, Euclid references the center after the creation of the circle. Having to define all properties of the circle before the circle itself seemed to clash with the way the text was written. Therefore, we came up with a system where we could build the object as we go. In addition, we realized that it would be convenient to build necessary objects through by parsing the name. For example, if we want to build circle BCD, all we would need is `\circle{"BCD"}`. The language would then be able to see that the name is three letters which must correspond to points. It will then create the three points needed and then form the circe. Using this syntax, the previous quote would read:
+In this case, Euclid references the center after the creation of the circle. Having to define all properties of the circle before the circle itself seemed to clash with the way the text was written. Therefore, we came up with a system where we could build the object as we go. In addition, we realized that it would be convenient to build dependent objects by parsing the name of the object. For example, if we want to build circle BCD, all we would need is `\circle{"BCD"}`. The language would then be able to see that the name is three letters which must correspond to points. It will then create the three points needed and then form the circe. Using this syntax, the previous quote would read:
 
 `Describe the \circle{"BCD"} with \center{"A", circle="BCD"}`
 
