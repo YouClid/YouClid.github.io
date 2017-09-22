@@ -1,0 +1,43 @@
+---
+layout: post
+title:  "Our Syntax"
+date:   2017-09-21 19:36:00-0400
+categories: jekyll update
+---
+#### Drew Monroe, Soumya Kundu, and Sailesh Simhadri
+
+### Updates
+We had two main goals for this week:
+1. Come up with a syntax for our markup language
+2. Create an intermediate object for the front end team to use
+
+In addition to these items, we would like to come up with a plan going forward to develop the backend.
+
+### Intermediate Representation
+Among our two main goals, coming up with an intermediate representation seemed to be the easier task. Seeing as the front end team was using Javascript and the backend team was using Python, we needed a representation that was both easy and efficient to use in both settings. The simplest method seemed to be to use JSON. Both Python and Javascript can read and write JSON to file with much hassle so we can focus on more important tasks for now. However, although we plan to continue with JSON until we have a working prototype, we have not finalized this as our only intermediate representation and may experiment with other methods.
+
+
+### Markup Syntax
+There was the other challenging task of developing a syntax. Our main goal for the syntax was to have it be natural to use and have it flow with the text. As mentioned last week, we determined that following in the footsteps of established languages, such a latex, made the most sense. Consequently, we decided that all tags for our syntax would begin with a backslash, `\`. In addition, every tag could be provided arguments through the use of curly braces, `{` and `}`. For example, creating a circle with name 'BCD' and radius 5 would be done by `\circle{name="BCD", radius=5}`. We determined that most of these arguments would be optional and that each object would have some required arguments.
+
+With the base syntax established, we quickly realized the difficulty of establishing relations. For example, if we create a circle in our syntax, how do we then create a point that is the center of the aforementioned circle. One method would be to create everything the circle needs and then create the circle. However, we found that this idea didn't fit with how one would write text. For example, in the first postulate, Euclid states:
+
+>Describe the circle BCD with center A.
+
+In this case, Euclid references the center after the creation of the circle. Having to define all properties of the circle before the circle itself seemed to clash with the way the text was written. Therefore, we came up with a system where we could build the object as we go. In addition, we realized that it would be convenient to build dependent objects by parsing the name of the object. For example, if we want to build circle BCD, all we would need is `\circle{"BCD"}`. The language would then be able to see that the name is three letters which must correspond to points. It will then create the three points needed and then form the circe. Using this syntax, the previous quote would read:
+
+`Describe the \circle{"BCD"} with \center{"A", circle="BCD"}`
+
+One problem with this method is that points must all be named with one letter. Therefore, we should have other methods to create a circle such that they could be named differently. For example, if I wanted to create a circle from points `A'`, `B`', and `C'`, the above syntax wouldn't work as all points end with `'`. Therefore, the way to create such a circle would be: `\circle{points=[\point{"A'"}, \point{"B'"}, \point{"C'"}}`. Therefore, we keep both options. By using conventional naming schemes, one could write with the flow of text. However, we also left the option to be explicit instead of using the shortcuts we provide.
+
+[Postulate 1 using our syntax](https://github.com/YouClid/youclid/blob/feature/parser/texts/postulate-1.yc)
+
+
+### Plans for the next week
+With our syntax determined, we plan to have a parser that can handle anything needed for postulate 1. This includes:
+* points
+* lines
+* circles
+* triangles
+
+We plan to have code ready that will generate a json dictionary from our markdown with any of these elements.
