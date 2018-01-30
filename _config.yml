@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: YouClid - Geometric Notation for Everyone
+title: YouClid
 # TODO: Add email address?
 # email: your-email@example.com
 description: > # this means to ignore newlines until "baseurl:"
@@ -28,6 +28,10 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+header_pages:
+  - about.md
+  - documentation/index.md
+  - examples/index.md
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

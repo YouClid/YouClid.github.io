@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- Slight modifications to the default minima theme -->
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  <!-- TODO: This shouldn't be here -->
+  <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
+  <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <main class="page-content" aria-label="Content">
+      <div class="container">
+        {{ content }}
+      </div>
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
