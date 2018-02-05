@@ -1,5 +1,5 @@
 ---
-title: Documentation
+title: Getting Started
 permalink: /docs/home
 layout: docs
 categories: documentation
