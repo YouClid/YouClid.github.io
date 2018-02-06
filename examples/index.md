@@ -7,6 +7,7 @@ title: Examples
 ---
 
 # Examples
-- [Book 1 Postulate 1](https://rawgit.com/YouClid/youclid/master/frontend/postulate1.html)
-- [Book 1 Postulate 2](https://rawgit.com/YouClid/youclid/master/frontend/postulate2.html)
-- [Book 3 Postulate 1](https://rawgit.com/YouClid/youclid/master/frontend/book3-postulate1.html)
+- [Book 1 Proposition 1](https://rawgit.com/YouClid/youclid/master/frontend/postulate1.html)
+- [Book 1 Proposition 2](https://rawgit.com/YouClid/youclid/master/frontend/postulate2.html)
+- [Book 1 Proposition 5](https://rawgit.com/YouClid/youclid/master/frontend/book1-proposition5.html)
+- [Book 3 Proposition 1](https://rawgit.com/YouClid/youclid/master/frontend/book3-postulate1.html)
