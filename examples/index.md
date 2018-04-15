@@ -6,7 +6,6 @@ layout: page
 title: Examples
 ---
 
-# Examples
 - [Book 1 Proposition 1](https://rawgit.com/YouClid/youclid/master/frontend/examples/postulate1/)
 - [Book 1 Proposition 2](https://rawgit.com/YouClid/youclid/master/frontend/examples/postulate2/)
 - [Book 1 Proposition 5](https://rawgit.com/YouClid/youclid/master/frontend/examples/book1-proposition5/)
