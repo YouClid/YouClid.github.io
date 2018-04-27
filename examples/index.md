@@ -6,6 +6,7 @@ layout: page
 title: Examples
 ---
 
+<<<<<<< HEAD
 # Examples
 - [Book 1 Proposition 1](https://rawgit.com/YouClid/euclids_elements/master/html/book1/prop01/index.html)
 - [Book 1 Proposition 2](https://rawgit.com/YouClid/euclids_elements/master/html/book1/prop02/index.html)
